@@ -1,0 +1,107 @@
+﻿<Window x:Name="BTnexit" x:Class="FinalPoeProg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalPoeProg"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="780" Width="1000">
+    <Border Padding="15">
+        <StackPanel Height="760" VerticalAlignment="Top">
+            <!--creating the start ,reset and exit button -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="TBnstart" Background="AliceBlue" Margin="0,0,14,0" Grid.Column="0" Content ="Start" Click="Button_Click_2" Height="20" VerticalAlignment="Top" />
+                <Button x:Name="BTnreset" Background="Yellow" Grid.Column="1" Content="Reset" Height="20" VerticalAlignment="Top" Click="BTnreset_Click" />
+
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="360*"/>
+                    <ColumnDefinition Width="250*"/>
+                    <ColumnDefinition Width="300*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Margin="0,20,0,0">
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,5,0,0" Text="Gross Monthly income(before deduction) -> R "/>
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,10,0,0" Text="Estimated nonthly taxt deducted -> R " />
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,15,0,0" Text="Estimated monthly for Groceries  -> R " />
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,20,0,0" Text="Estimated monthly for  Water and lights -> " />
+
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,5,0,0" Text="Estimated monthly for Travel costs (including petrol) -> R "/>
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,10,0,0" Text="Estimated monthly for Cell phone and telephone -> R" />
+                    <TextBlock  FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,15,0,0" Text="Estimated monthly for Other expenses  -> R" />
+                </StackPanel>
+
+                <StackPanel Margin="50,20,0,0" Grid.Column="1" >
+                    <TextBox Margin="0,1,0,0" Width="200" Padding="5"  x:Name="TBxtotalamount"/>
+                    <TextBox  Margin="0,2,0,0" Width="200" Padding="5"    x:Name="TBxtax"/>
+                    <TextBox  Margin="0,10,0,0" Width="200" Padding="5"    x:Name="TBxgroceries"/>
+                    <TextBox Margin="0,15,0,0" Width="200" Padding="5"  x:Name="TBxwatrelight"/>
+
+                    <TextBox x:Name="TBxtravel" Margin="0,20,0,0" Width="200" Padding="5"   />
+                    <TextBox x:Name="TBxcell_telephone"  Margin="0,15,0,0" Width="200" Padding="5"  />
+                    <TextBox x:Name="TBxotherexpenses" Margin="0,0,0,0" Width="200" Padding="5"    />
+                </StackPanel>
+                <RadioButton Content="Renting Accommodation" Grid.Column="2" HorizontalAlignment="Left" Margin="29,8,0,0" VerticalAlignment="Top" Click="RadioButton_Checked"/>
+                <RadioButton Content="Buying a property" Grid.Column="2" HorizontalAlignment="Left" Margin="199,8,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_1"/>
+                <TextBox x:Name="TBxcaldisplay" Grid.Column="2" HorizontalAlignment="Center" Margin="0,46,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="281" Height="142"/>
+
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="850*"/>
+                    <ColumnDefinition Width="300*"/>
+                    <ColumnDefinition Width="350*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel  Margin="0,20,0,0">
+                    <TextBlock x:Name="TXTmonthrentalMonth" Visibility="Hidden" Text="Monthly rental amount" TextWrapping="Wrap"/>
+
+                    <TextBlock x:Name="TXTpurchaseprice" Visibility="Hidden" FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,5,0,0" Text="Purchase price of the property -&gt; R  "/>
+                    <TextBlock x:Name="TXTdeposit" Visibility="Hidden" FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,10,0,0" Text="Total deposit you will make -&gt; R  " />
+                    <TextBlock x:Name="TXTinterestRate" Visibility="Hidden" FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,15,0,0" Text="Interest rate in percentage  -&gt; %  " />
+                    <TextBlock x:Name="TXTmonthlyrepay" Visibility="Hidden" FontWeight="Bold" FontStyle="Oblique" Padding="5" Margin="0,20,0,0" Text="Number of months you will like to repay back the money between 240 and 360 months  -&gt; " />
+
+                </StackPanel>
+
+                <StackPanel Margin="50,20,0,0" Grid.Column="2" >
+                    <TextBox x:Name="TBxpurchaseprice" Visibility="Hidden" Margin="0,1,0,0" Width="200" Padding="5" />
+                    <TextBox x:Name="TBxdeposit" Visibility="Hidden" Margin="0,2,0,0" Width="200" Padding="5"   />
+                    <TextBox x:Name="TBxinterestRate" Visibility="Hidden"  Margin="0,10,0,0" Width="200" Padding="5"   />
+                    <TextBox x:Name="TBxmonthlyrepay" Visibility="Hidden" Margin="0,15,0,0" Width="200" Padding="5"  />
+
+                </StackPanel>
+                <TextBox x:Name="TBxrenting" Visibility="Hidden" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Margin="124,20,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="850*"/>
+                    <ColumnDefinition Width="250*"/>
+                    <ColumnDefinition Width="350*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBox x:Name="TBxdisplay"  TextWrapping="Wrap" Width="480" Height="202"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="50,150,10,0">
+                    <Button x:Name="TBnexit" Width="150" Height="50" Background="Red" Content="Exit" Click="Button_Click_3" />
+                </StackPanel>
+                <Button Margin="50,20,0,0" Width="150" Height="50" Content="Display" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Click="Button_Click" />
+                <Button Margin="50,20,0,0" Width="100" Height="50" Content="AddDetails" Grid.Column="2" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="Button_Click_1"/>
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</Window>
